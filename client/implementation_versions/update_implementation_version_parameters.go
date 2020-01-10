@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	ImplementationVersion "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewUpdateImplementationVersionParams creates a new UpdateImplementationVersionParams object
@@ -67,7 +67,7 @@ type UpdateImplementationVersionParams struct {
 	  ImplementationVersion object to be updated
 
 	*/
-	Implementationversion models.ImplementationVersion
+	Implementationversion ImplementationVersion.ImplementationVersion
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateImplementationVersionParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithImplementationversion adds the implementationversion to the update implementation version params
-func (o *UpdateImplementationVersionParams) WithImplementationversion(implementationversion models.ImplementationVersion) *UpdateImplementationVersionParams {
+func (o *UpdateImplementationVersionParams) WithImplementationversion(implementationversion ImplementationVersion.ImplementationVersion) *UpdateImplementationVersionParams {
 	o.SetImplementationversion(implementationversion)
 	return o
 }
 
 // SetImplementationversion adds the implementationversion to the update implementation version params
-func (o *UpdateImplementationVersionParams) SetImplementationversion(implementationversion models.ImplementationVersion) {
+func (o *UpdateImplementationVersionParams) SetImplementationversion(implementationversion ImplementationVersion.ImplementationVersion) {
 	o.Implementationversion = implementationversion
 }
 

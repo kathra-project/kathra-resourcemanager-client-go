@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	CatalogEntry "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // UpdateCatalogEntryAttributesReader is a Reader for the UpdateCatalogEntryAttributes structure.
@@ -52,14 +52,14 @@ func NewUpdateCatalogEntryAttributesOK() *UpdateCatalogEntryAttributesOK {
 Returns the modified object
 */
 type UpdateCatalogEntryAttributesOK struct {
-	Payload models.CatalogEntry
+	Payload CatalogEntry.CatalogEntry
 }
 
 func (o *UpdateCatalogEntryAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /catalogentries/{resourceId}][%d] updateCatalogEntryAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateCatalogEntryAttributesOK) GetPayload() models.CatalogEntry {
+func (o *UpdateCatalogEntryAttributesOK) GetPayload() CatalogEntry.CatalogEntry {
 	return o.Payload
 }
 

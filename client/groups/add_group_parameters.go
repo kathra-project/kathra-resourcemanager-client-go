@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Group "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddGroupParams creates a new AddGroupParams object
@@ -67,7 +67,7 @@ type AddGroupParams struct {
 	  Group object to be created
 
 	*/
-	Group models.Group
+	Group Group.Group
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddGroupParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithGroup adds the group to the add group params
-func (o *AddGroupParams) WithGroup(group models.Group) *AddGroupParams {
+func (o *AddGroupParams) WithGroup(group Group.Group) *AddGroupParams {
 	o.SetGroup(group)
 	return o
 }
 
 // SetGroup adds the group to the add group params
-func (o *AddGroupParams) SetGroup(group models.Group) {
+func (o *AddGroupParams) SetGroup(group Group.Group) {
 	o.Group = group
 }
 

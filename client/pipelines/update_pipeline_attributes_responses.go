@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Pipeline "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // UpdatePipelineAttributesReader is a Reader for the UpdatePipelineAttributes structure.
@@ -52,14 +52,14 @@ func NewUpdatePipelineAttributesOK() *UpdatePipelineAttributesOK {
 Returns the modified object
 */
 type UpdatePipelineAttributesOK struct {
-	Payload models.Pipeline
+	Payload Pipeline.Pipeline
 }
 
 func (o *UpdatePipelineAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /pipelines/{resourceId}][%d] updatePipelineAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdatePipelineAttributesOK) GetPayload() models.Pipeline {
+func (o *UpdatePipelineAttributesOK) GetPayload() Pipeline.Pipeline {
 	return o.Payload
 }
 

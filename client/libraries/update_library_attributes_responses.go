@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Library "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // UpdateLibraryAttributesReader is a Reader for the UpdateLibraryAttributes structure.
@@ -52,14 +52,14 @@ func NewUpdateLibraryAttributesOK() *UpdateLibraryAttributesOK {
 Returns the modified object
 */
 type UpdateLibraryAttributesOK struct {
-	Payload models.Library
+	Payload Library.Library
 }
 
 func (o *UpdateLibraryAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /libraries/{resourceId}][%d] updateLibraryAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateLibraryAttributesOK) GetPayload() models.Library {
+func (o *UpdateLibraryAttributesOK) GetPayload() Library.Library {
 	return o.Payload
 }
 

@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	KeyPair "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // GetKeyPairReader is a Reader for the GetKeyPair structure.
@@ -52,14 +52,14 @@ func NewGetKeyPairOK() *GetKeyPairOK {
 Returns the object
 */
 type GetKeyPairOK struct {
-	Payload models.KeyPair
+	Payload KeyPair.KeyPair
 }
 
 func (o *GetKeyPairOK) Error() string {
 	return fmt.Sprintf("[GET /keypairs/{resourceId}][%d] getKeyPairOK  %+v", 200, o.Payload)
 }
 
-func (o *GetKeyPairOK) GetPayload() models.KeyPair {
+func (o *GetKeyPairOK) GetPayload() KeyPair.KeyPair {
 	return o.Payload
 }
 

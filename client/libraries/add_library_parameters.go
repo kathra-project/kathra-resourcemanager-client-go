@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Library "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddLibraryParams creates a new AddLibraryParams object
@@ -67,7 +67,7 @@ type AddLibraryParams struct {
 	  Library object to be created
 
 	*/
-	Library models.Library
+	Library Library.Library
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddLibraryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithLibrary adds the library to the add library params
-func (o *AddLibraryParams) WithLibrary(library models.Library) *AddLibraryParams {
+func (o *AddLibraryParams) WithLibrary(library Library.Library) *AddLibraryParams {
 	o.SetLibrary(library)
 	return o
 }
 
 // SetLibrary adds the library to the add library params
-func (o *AddLibraryParams) SetLibrary(library models.Library) {
+func (o *AddLibraryParams) SetLibrary(library Library.Library) {
 	o.Library = library
 }
 

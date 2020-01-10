@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Pipeline "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewUpdatePipelineAttributesParams creates a new UpdatePipelineAttributesParams object
@@ -67,7 +67,7 @@ type UpdatePipelineAttributesParams struct {
 	  Pipeline object to be updated
 
 	*/
-	Pipeline models.Pipeline
+	Pipeline Pipeline.Pipeline
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdatePipelineAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithPipeline adds the pipeline to the update pipeline attributes params
-func (o *UpdatePipelineAttributesParams) WithPipeline(pipeline models.Pipeline) *UpdatePipelineAttributesParams {
+func (o *UpdatePipelineAttributesParams) WithPipeline(pipeline Pipeline.Pipeline) *UpdatePipelineAttributesParams {
 	o.SetPipeline(pipeline)
 	return o
 }
 
 // SetPipeline adds the pipeline to the update pipeline attributes params
-func (o *UpdatePipelineAttributesParams) SetPipeline(pipeline models.Pipeline) {
+func (o *UpdatePipelineAttributesParams) SetPipeline(pipeline Pipeline.Pipeline) {
 	o.Pipeline = pipeline
 }
 

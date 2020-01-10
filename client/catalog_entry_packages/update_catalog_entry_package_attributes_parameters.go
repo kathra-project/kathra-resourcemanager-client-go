@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	CatalogEntryPackage "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewUpdateCatalogEntryPackageAttributesParams creates a new UpdateCatalogEntryPackageAttributesParams object
@@ -67,7 +67,7 @@ type UpdateCatalogEntryPackageAttributesParams struct {
 	  CatalogEntryPackage object to be updated
 
 	*/
-	Catalogentrypackage models.CatalogEntryPackage
+	Catalogentrypackage CatalogEntryPackage.CatalogEntryPackage
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateCatalogEntryPackageAttributesParams) SetHTTPClient(client *http.C
 }
 
 // WithCatalogentrypackage adds the catalogentrypackage to the update catalog entry package attributes params
-func (o *UpdateCatalogEntryPackageAttributesParams) WithCatalogentrypackage(catalogentrypackage models.CatalogEntryPackage) *UpdateCatalogEntryPackageAttributesParams {
+func (o *UpdateCatalogEntryPackageAttributesParams) WithCatalogentrypackage(catalogentrypackage CatalogEntryPackage.CatalogEntryPackage) *UpdateCatalogEntryPackageAttributesParams {
 	o.SetCatalogentrypackage(catalogentrypackage)
 	return o
 }
 
 // SetCatalogentrypackage adds the catalogentrypackage to the update catalog entry package attributes params
-func (o *UpdateCatalogEntryPackageAttributesParams) SetCatalogentrypackage(catalogentrypackage models.CatalogEntryPackage) {
+func (o *UpdateCatalogEntryPackageAttributesParams) SetCatalogentrypackage(catalogentrypackage CatalogEntryPackage.CatalogEntryPackage) {
 	o.Catalogentrypackage = catalogentrypackage
 }
 

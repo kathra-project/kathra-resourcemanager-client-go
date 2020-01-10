@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Library "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // GetLibrariesReader is a Reader for the GetLibraries structure.
@@ -52,14 +52,14 @@ func NewGetLibrariesOK() *GetLibrariesOK {
 List of accessible libraries for the authenticated user
 */
 type GetLibrariesOK struct {
-	Payload []models.Library
+	Payload []Library.Library
 }
 
 func (o *GetLibrariesOK) Error() string {
 	return fmt.Sprintf("[GET /libraries][%d] getLibrariesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetLibrariesOK) GetPayload() []models.Library {
+func (o *GetLibrariesOK) GetPayload() []Library.Library {
 	return o.Payload
 }
 

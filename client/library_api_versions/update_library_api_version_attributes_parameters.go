@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	LibraryApiVersion "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewUpdateLibraryAPIVersionAttributesParams creates a new UpdateLibraryAPIVersionAttributesParams object
@@ -67,7 +67,7 @@ type UpdateLibraryAPIVersionAttributesParams struct {
 	  LibraryApiVersion object to be updated
 
 	*/
-	Libraryapiversion models.LibraryAPIVersion
+	Libraryapiversion LibraryApiVersion.LibraryApiVersion
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateLibraryAPIVersionAttributesParams) SetHTTPClient(client *http.Cli
 }
 
 // WithLibraryapiversion adds the libraryapiversion to the update library Api version attributes params
-func (o *UpdateLibraryAPIVersionAttributesParams) WithLibraryapiversion(libraryapiversion models.LibraryAPIVersion) *UpdateLibraryAPIVersionAttributesParams {
+func (o *UpdateLibraryAPIVersionAttributesParams) WithLibraryapiversion(libraryapiversion LibraryApiVersion.LibraryApiVersion) *UpdateLibraryAPIVersionAttributesParams {
 	o.SetLibraryapiversion(libraryapiversion)
 	return o
 }
 
 // SetLibraryapiversion adds the libraryapiversion to the update library Api version attributes params
-func (o *UpdateLibraryAPIVersionAttributesParams) SetLibraryapiversion(libraryapiversion models.LibraryAPIVersion) {
+func (o *UpdateLibraryAPIVersionAttributesParams) SetLibraryapiversion(libraryapiversion LibraryApiVersion.LibraryApiVersion) {
 	o.Libraryapiversion = libraryapiversion
 }
 

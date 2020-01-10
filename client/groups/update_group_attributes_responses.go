@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Group "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // UpdateGroupAttributesReader is a Reader for the UpdateGroupAttributes structure.
@@ -52,14 +52,14 @@ func NewUpdateGroupAttributesOK() *UpdateGroupAttributesOK {
 Returns the modified object
 */
 type UpdateGroupAttributesOK struct {
-	Payload models.Group
+	Payload Group.Group
 }
 
 func (o *UpdateGroupAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /groups/{resourceId}][%d] updateGroupAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateGroupAttributesOK) GetPayload() models.Group {
+func (o *UpdateGroupAttributesOK) GetPayload() Group.Group {
 	return o.Payload
 }
 

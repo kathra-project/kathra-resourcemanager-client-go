@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	CatalogEntry "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewUpdateCatalogEntryAttributesParams creates a new UpdateCatalogEntryAttributesParams object
@@ -67,7 +67,7 @@ type UpdateCatalogEntryAttributesParams struct {
 	  CatalogEntry object to be updated
 
 	*/
-	Catalogentry models.CatalogEntry
+	Catalogentry CatalogEntry.CatalogEntry
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateCatalogEntryAttributesParams) SetHTTPClient(client *http.Client) 
 }
 
 // WithCatalogentry adds the catalogentry to the update catalog entry attributes params
-func (o *UpdateCatalogEntryAttributesParams) WithCatalogentry(catalogentry models.CatalogEntry) *UpdateCatalogEntryAttributesParams {
+func (o *UpdateCatalogEntryAttributesParams) WithCatalogentry(catalogentry CatalogEntry.CatalogEntry) *UpdateCatalogEntryAttributesParams {
 	o.SetCatalogentry(catalogentry)
 	return o
 }
 
 // SetCatalogentry adds the catalogentry to the update catalog entry attributes params
-func (o *UpdateCatalogEntryAttributesParams) SetCatalogentry(catalogentry models.CatalogEntry) {
+func (o *UpdateCatalogEntryAttributesParams) SetCatalogentry(catalogentry CatalogEntry.CatalogEntry) {
 	o.Catalogentry = catalogentry
 }
 

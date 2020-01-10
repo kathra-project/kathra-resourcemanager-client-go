@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Component "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddComponentParams creates a new AddComponentParams object
@@ -67,7 +67,7 @@ type AddComponentParams struct {
 	  Component object to be created
 
 	*/
-	Component models.Component
+	Component Component.Component
 	/*GroupPath
 	  group's path
 
@@ -113,13 +113,13 @@ func (o *AddComponentParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithComponent adds the component to the add component params
-func (o *AddComponentParams) WithComponent(component models.Component) *AddComponentParams {
+func (o *AddComponentParams) WithComponent(component Component.Component) *AddComponentParams {
 	o.SetComponent(component)
 	return o
 }
 
 // SetComponent adds the component to the add component params
-func (o *AddComponentParams) SetComponent(component models.Component) {
+func (o *AddComponentParams) SetComponent(component Component.Component) {
 	o.Component = component
 }
 

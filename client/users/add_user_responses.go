@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	User "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // AddUserReader is a Reader for the AddUser structure.
@@ -52,14 +52,14 @@ func NewAddUserOK() *AddUserOK {
 Returns the created object
 */
 type AddUserOK struct {
-	Payload models.User
+	Payload User.User
 }
 
 func (o *AddUserOK) Error() string {
 	return fmt.Sprintf("[POST /users][%d] addUserOK  %+v", 200, o.Payload)
 }
 
-func (o *AddUserOK) GetPayload() models.User {
+func (o *AddUserOK) GetPayload() User.User {
 	return o.Payload
 }
 

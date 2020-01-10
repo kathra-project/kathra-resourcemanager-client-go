@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Assignation "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddAssignationParams creates a new AddAssignationParams object
@@ -67,7 +67,7 @@ type AddAssignationParams struct {
 	  Assignation object to be created
 
 	*/
-	Assignation models.Assignation
+	Assignation Assignation.CatalogEnAssignationtry
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddAssignationParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithAssignation adds the assignation to the add assignation params
-func (o *AddAssignationParams) WithAssignation(assignation models.Assignation) *AddAssignationParams {
+func (o *AddAssignationParams) WithAssignation(assignation Assignation.CatalogEnAssignationtry) *AddAssignationParams {
 	o.SetAssignation(assignation)
 	return o
 }
 
 // SetAssignation adds the assignation to the add assignation params
-func (o *AddAssignationParams) SetAssignation(assignation models.Assignation) {
+func (o *AddAssignationParams) SetAssignation(assignation Assignation.CatalogEnAssignationtry) {
 	o.Assignation = assignation
 }
 

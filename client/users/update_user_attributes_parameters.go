@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	User "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewUpdateUserAttributesParams creates a new UpdateUserAttributesParams object
@@ -72,7 +72,7 @@ type UpdateUserAttributesParams struct {
 	  User object to be updated
 
 	*/
-	User models.User
+	User User.User
 
 	timeout    time.Duration
 	Context    context.Context
@@ -124,13 +124,13 @@ func (o *UpdateUserAttributesParams) SetResourceID(resourceID string) {
 }
 
 // WithUser adds the user to the update user attributes params
-func (o *UpdateUserAttributesParams) WithUser(user models.User) *UpdateUserAttributesParams {
+func (o *UpdateUserAttributesParams) WithUser(user User.User) *UpdateUserAttributesParams {
 	o.SetUser(user)
 	return o
 }
 
 // SetUser adds the user to the update user attributes params
-func (o *UpdateUserAttributesParams) SetUser(user models.User) {
+func (o *UpdateUserAttributesParams) SetUser(user User.User) {
 	o.User = user
 }
 

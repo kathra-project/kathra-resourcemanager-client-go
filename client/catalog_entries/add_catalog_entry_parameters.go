@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	CatalogEntry "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddCatalogEntryParams creates a new AddCatalogEntryParams object
@@ -67,7 +67,7 @@ type AddCatalogEntryParams struct {
 	  CatalogEntry object to be created
 
 	*/
-	Catalogentry models.CatalogEntry
+	Catalogentry CatalogEntry.CatalogEntry
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddCatalogEntryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithCatalogentry adds the catalogentry to the add catalog entry params
-func (o *AddCatalogEntryParams) WithCatalogentry(catalogentry models.CatalogEntry) *AddCatalogEntryParams {
+func (o *AddCatalogEntryParams) WithCatalogentry(catalogentry CatalogEntry.CatalogEntry) *AddCatalogEntryParams {
 	o.SetCatalogentry(catalogentry)
 	return o
 }
 
 // SetCatalogentry adds the catalogentry to the add catalog entry params
-func (o *AddCatalogEntryParams) SetCatalogentry(catalogentry models.CatalogEntry) {
+func (o *AddCatalogEntryParams) SetCatalogentry(catalogentry CatalogEntry.CatalogEntry) {
 	o.Catalogentry = catalogentry
 }
 

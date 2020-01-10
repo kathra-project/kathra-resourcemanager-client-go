@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Group "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // GetGroupsReader is a Reader for the GetGroups structure.
@@ -52,14 +52,14 @@ func NewGetGroupsOK() *GetGroupsOK {
 List of accessible groups for the authenticated user
 */
 type GetGroupsOK struct {
-	Payload []models.Group
+	Payload []Group.Group
 }
 
 func (o *GetGroupsOK) Error() string {
 	return fmt.Sprintf("[GET /groups][%d] getGroupsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetGroupsOK) GetPayload() []models.Group {
+func (o *GetGroupsOK) GetPayload() []Group.Group {
 	return o.Payload
 }
 

@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	CatalogEntry "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // GetCatalogEntriesReader is a Reader for the GetCatalogEntries structure.
@@ -52,14 +52,14 @@ func NewGetCatalogEntriesOK() *GetCatalogEntriesOK {
 List of accessible catalogentries for the authenticated user
 */
 type GetCatalogEntriesOK struct {
-	Payload []models.CatalogEntry
+	Payload []CatalogEntry.CatalogEntry
 }
 
 func (o *GetCatalogEntriesOK) Error() string {
 	return fmt.Sprintf("[GET /catalogentries][%d] getCatalogEntriesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetCatalogEntriesOK) GetPayload() []models.CatalogEntry {
+func (o *GetCatalogEntriesOK) GetPayload() []CatalogEntry.CatalogEntry {
 	return o.Payload
 }
 

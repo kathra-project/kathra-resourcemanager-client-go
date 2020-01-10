@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Component "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // AddComponentReader is a Reader for the AddComponent structure.
@@ -52,14 +52,14 @@ func NewAddComponentOK() *AddComponentOK {
 Returns the created object
 */
 type AddComponentOK struct {
-	Payload models.Component
+	Payload Component.Component
 }
 
 func (o *AddComponentOK) Error() string {
 	return fmt.Sprintf("[POST /components][%d] addComponentOK  %+v", 200, o.Payload)
 }
 
-func (o *AddComponentOK) GetPayload() models.Component {
+func (o *AddComponentOK) GetPayload() Component.Component {
 	return o.Payload
 }
 

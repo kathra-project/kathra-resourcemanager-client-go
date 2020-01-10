@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	KeyPair "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // UpdateKeyPairAttributesReader is a Reader for the UpdateKeyPairAttributes structure.
@@ -52,14 +52,14 @@ func NewUpdateKeyPairAttributesOK() *UpdateKeyPairAttributesOK {
 Returns the modified object
 */
 type UpdateKeyPairAttributesOK struct {
-	Payload models.KeyPair
+	Payload KeyPair.KeyPair
 }
 
 func (o *UpdateKeyPairAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /keypairs/{resourceId}][%d] updateKeyPairAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateKeyPairAttributesOK) GetPayload() models.KeyPair {
+func (o *UpdateKeyPairAttributesOK) GetPayload() KeyPair.KeyPair {
 	return o.Payload
 }
 

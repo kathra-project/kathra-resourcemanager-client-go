@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	User "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddUserParams creates a new AddUserParams object
@@ -67,7 +67,7 @@ type AddUserParams struct {
 	  User object to be created
 
 	*/
-	User models.User
+	User User.User
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddUserParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithUser adds the user to the add user params
-func (o *AddUserParams) WithUser(user models.User) *AddUserParams {
+func (o *AddUserParams) WithUser(user User.User) *AddUserParams {
 	o.SetUser(user)
 	return o
 }
 
 // SetUser adds the user to the add user params
-func (o *AddUserParams) SetUser(user models.User) {
+func (o *AddUserParams) SetUser(user User.User) {
 	o.User = user
 }
 

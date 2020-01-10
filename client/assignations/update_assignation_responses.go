@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	Assignation "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // UpdateAssignationReader is a Reader for the UpdateAssignation structure.
@@ -52,14 +52,14 @@ func NewUpdateAssignationOK() *UpdateAssignationOK {
 Returns the modified object
 */
 type UpdateAssignationOK struct {
-	Payload models.Assignation
+	Payload Assignation.CatalogEnAssignationtry
 }
 
 func (o *UpdateAssignationOK) Error() string {
 	return fmt.Sprintf("[PUT /assignations/{resourceId}][%d] updateAssignationOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateAssignationOK) GetPayload() models.Assignation {
+func (o *UpdateAssignationOK) GetPayload() Assignation.CatalogEnAssignationtry {
 	return o.Payload
 }
 

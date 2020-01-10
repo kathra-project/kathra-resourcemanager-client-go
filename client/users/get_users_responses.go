@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	User "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // GetUsersReader is a Reader for the GetUsers structure.
@@ -52,14 +52,14 @@ func NewGetUsersOK() *GetUsersOK {
 List of accessible users for the authenticated user
 */
 type GetUsersOK struct {
-	Payload []models.User
+	Payload []User.User
 }
 
 func (o *GetUsersOK) Error() string {
 	return fmt.Sprintf("[GET /users][%d] getUsersOK  %+v", 200, o.Payload)
 }
 
-func (o *GetUsersOK) GetPayload() []models.User {
+func (o *GetUsersOK) GetPayload() []User.User {
 	return o.Payload
 }
 

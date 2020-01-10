@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	SourceRepository "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddSourceRepositoryParams creates a new AddSourceRepositoryParams object
@@ -67,7 +67,7 @@ type AddSourceRepositoryParams struct {
 	  SourceRepository object to be created
 
 	*/
-	Sourcerepository models.SourceRepository
+	Sourcerepository SourceRepository.SourceRepository
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddSourceRepositoryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithSourcerepository adds the sourcerepository to the add source repository params
-func (o *AddSourceRepositoryParams) WithSourcerepository(sourcerepository models.SourceRepository) *AddSourceRepositoryParams {
+func (o *AddSourceRepositoryParams) WithSourcerepository(sourcerepository SourceRepository.SourceRepository) *AddSourceRepositoryParams {
 	o.SetSourcerepository(sourcerepository)
 	return o
 }
 
 // SetSourcerepository adds the sourcerepository to the add source repository params
-func (o *AddSourceRepositoryParams) SetSourcerepository(sourcerepository models.SourceRepository) {
+func (o *AddSourceRepositoryParams) SetSourcerepository(sourcerepository SourceRepository.SourceRepository) {
 	o.Sourcerepository = sourcerepository
 }
 

@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
+	KeyPair "github.com/kathra-project/kathra-core-model-go/models"
 )
 
 // NewAddKeyPairParams creates a new AddKeyPairParams object
@@ -67,7 +67,7 @@ type AddKeyPairParams struct {
 	  KeyPair object to be created
 
 	*/
-	Keypair models.KeyPair
+	Keypair KeyPair.KeyPair
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddKeyPairParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithKeypair adds the keypair to the add key pair params
-func (o *AddKeyPairParams) WithKeypair(keypair models.KeyPair) *AddKeyPairParams {
+func (o *AddKeyPairParams) WithKeypair(keypair KeyPair.KeyPair) *AddKeyPairParams {
 	o.SetKeypair(keypair)
 	return o
 }
 
 // SetKeypair adds the keypair to the add key pair params
-func (o *AddKeyPairParams) SetKeypair(keypair models.KeyPair) {
+func (o *AddKeyPairParams) SetKeypair(keypair KeyPair.KeyPair) {
 	o.Keypair = keypair
 }
 
