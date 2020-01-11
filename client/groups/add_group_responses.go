@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Group "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // AddGroupReader is a Reader for the AddGroup structure.
@@ -52,14 +52,14 @@ func NewAddGroupOK() *AddGroupOK {
 Returns the created object
 */
 type AddGroupOK struct {
-	Payload Group.Group
+	Payload models.Group
 }
 
 func (o *AddGroupOK) Error() string {
 	return fmt.Sprintf("[POST /groups][%d] addGroupOK  %+v", 200, o.Payload)
 }
 
-func (o *AddGroupOK) GetPayload() Group.Group {
+func (o *AddGroupOK) GetPayload() models.Group {
 	return o.Payload
 }
 

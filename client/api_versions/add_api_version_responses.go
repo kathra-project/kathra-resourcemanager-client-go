@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	ImplementationVersion "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // AddAPIVersionReader is a Reader for the AddAPIVersion structure.
@@ -52,14 +52,14 @@ func NewAddAPIVersionOK() *AddAPIVersionOK {
 Returns the created object
 */
 type AddAPIVersionOK struct {
-	Payload ImplementationVersion.ImplementationVersion
+	Payload models.APIVersion
 }
 
 func (o *AddAPIVersionOK) Error() string {
 	return fmt.Sprintf("[POST /apiversions][%d] addApiVersionOK  %+v", 200, o.Payload)
 }
 
-func (o *AddAPIVersionOK) GetPayload() ImplementationVersion.ImplementationVersion {
+func (o *AddAPIVersionOK) GetPayload() models.APIVersion {
 	return o.Payload
 }
 

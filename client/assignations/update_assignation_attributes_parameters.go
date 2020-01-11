@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Assignation "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewUpdateAssignationAttributesParams creates a new UpdateAssignationAttributesParams object
@@ -67,7 +67,7 @@ type UpdateAssignationAttributesParams struct {
 	  Assignation object to be updated
 
 	*/
-	Assignation Assignation.Assignation
+	Assignation models.Assignation
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateAssignationAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithAssignation adds the assignation to the update assignation attributes params
-func (o *UpdateAssignationAttributesParams) WithAssignation(assignation Assignation.Assignation) *UpdateAssignationAttributesParams {
+func (o *UpdateAssignationAttributesParams) WithAssignation(assignation models.Assignation) *UpdateAssignationAttributesParams {
 	o.SetAssignation(assignation)
 	return o
 }
 
 // SetAssignation adds the assignation to the update assignation attributes params
-func (o *UpdateAssignationAttributesParams) SetAssignation(assignation Assignation.Assignation) {
+func (o *UpdateAssignationAttributesParams) SetAssignation(assignation models.Assignation) {
 	o.Assignation = assignation
 }
 

@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	SourceRepository "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // UpdateSourceRepositoryReader is a Reader for the UpdateSourceRepository structure.
@@ -52,14 +52,14 @@ func NewUpdateSourceRepositoryOK() *UpdateSourceRepositoryOK {
 Returns the modified object
 */
 type UpdateSourceRepositoryOK struct {
-	Payload SourceRepository.SourceRepository
+	Payload models.SourceRepository
 }
 
 func (o *UpdateSourceRepositoryOK) Error() string {
 	return fmt.Sprintf("[PUT /sourcerepositories/{resourceId}][%d] updateSourceRepositoryOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateSourceRepositoryOK) GetPayload() SourceRepository.SourceRepository {
+func (o *UpdateSourceRepositoryOK) GetPayload() models.SourceRepository {
 	return o.Payload
 }
 

@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Library "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewUpdateLibraryAttributesParams creates a new UpdateLibraryAttributesParams object
@@ -67,7 +67,7 @@ type UpdateLibraryAttributesParams struct {
 	  Library object to be updated
 
 	*/
-	Library Library.Library
+	Library models.Library
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateLibraryAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithLibrary adds the library to the update library attributes params
-func (o *UpdateLibraryAttributesParams) WithLibrary(library Library.Library) *UpdateLibraryAttributesParams {
+func (o *UpdateLibraryAttributesParams) WithLibrary(library models.Library) *UpdateLibraryAttributesParams {
 	o.SetLibrary(library)
 	return o
 }
 
 // SetLibrary adds the library to the update library attributes params
-func (o *UpdateLibraryAttributesParams) SetLibrary(library Library.Library) {
+func (o *UpdateLibraryAttributesParams) SetLibrary(library models.Library) {
 	o.Library = library
 }
 

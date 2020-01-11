@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	BinaryRepository "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // UpdateBinaryRepositoryReader is a Reader for the UpdateBinaryRepository structure.
@@ -52,14 +52,14 @@ func NewUpdateBinaryRepositoryOK() *UpdateBinaryRepositoryOK {
 Returns the modified object
 */
 type UpdateBinaryRepositoryOK struct {
-	Payload BinaryRepository.BinaryRepository
+	Payload models.BinaryRepository
 }
 
 func (o *UpdateBinaryRepositoryOK) Error() string {
 	return fmt.Sprintf("[PUT /binaryrepositories/{resourceId}][%d] updateBinaryRepositoryOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateBinaryRepositoryOK) GetPayload() BinaryRepository.BinaryRepository {
+func (o *UpdateBinaryRepositoryOK) GetPayload() models.BinaryRepository {
 	return o.Payload
 }
 

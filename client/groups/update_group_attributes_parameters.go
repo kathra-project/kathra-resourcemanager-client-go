@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Group "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewUpdateGroupAttributesParams creates a new UpdateGroupAttributesParams object
@@ -67,7 +67,7 @@ type UpdateGroupAttributesParams struct {
 	  Group object to be updated
 
 	*/
-	Group Group.Group
+	Group models.Group
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateGroupAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithGroup adds the group to the update group attributes params
-func (o *UpdateGroupAttributesParams) WithGroup(group Group.Group) *UpdateGroupAttributesParams {
+func (o *UpdateGroupAttributesParams) WithGroup(group models.Group) *UpdateGroupAttributesParams {
 	o.SetGroup(group)
 	return o
 }
 
 // SetGroup adds the group to the update group attributes params
-func (o *UpdateGroupAttributesParams) SetGroup(group Group.Group) {
+func (o *UpdateGroupAttributesParams) SetGroup(group models.Group) {
 	o.Group = group
 }
 

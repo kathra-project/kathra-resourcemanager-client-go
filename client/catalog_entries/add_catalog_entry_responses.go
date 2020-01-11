@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	CatalogEntry "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // AddCatalogEntryReader is a Reader for the AddCatalogEntry structure.
@@ -52,14 +52,14 @@ func NewAddCatalogEntryOK() *AddCatalogEntryOK {
 Returns the created object
 */
 type AddCatalogEntryOK struct {
-	Payload CatalogEntry.CatalogEntry
+	Payload models.CatalogEntry
 }
 
 func (o *AddCatalogEntryOK) Error() string {
 	return fmt.Sprintf("[POST /catalogentries][%d] addCatalogEntryOK  %+v", 200, o.Payload)
 }
 
-func (o *AddCatalogEntryOK) GetPayload() CatalogEntry.CatalogEntry {
+func (o *AddCatalogEntryOK) GetPayload() models.CatalogEntry {
 	return o.Payload
 }
 

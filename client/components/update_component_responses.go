@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Component "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // UpdateComponentReader is a Reader for the UpdateComponent structure.
@@ -52,14 +52,14 @@ func NewUpdateComponentOK() *UpdateComponentOK {
 Returns the modified object
 */
 type UpdateComponentOK struct {
-	Payload Component.Component
+	Payload models.Component
 }
 
 func (o *UpdateComponentOK) Error() string {
 	return fmt.Sprintf("[PUT /components/{resourceId}][%d] updateComponentOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateComponentOK) GetPayload() Component.Component {
+func (o *UpdateComponentOK) GetPayload() models.Component {
 	return o.Payload
 }
 

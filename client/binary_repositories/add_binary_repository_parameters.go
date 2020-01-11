@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	BinaryRepository "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewAddBinaryRepositoryParams creates a new AddBinaryRepositoryParams object
@@ -67,7 +67,7 @@ type AddBinaryRepositoryParams struct {
 	  BinaryRepository object to be created
 
 	*/
-	Binaryrepository BinaryRepository.BinaryRepository
+	Binaryrepository models.BinaryRepository
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddBinaryRepositoryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithBinaryrepository adds the binaryrepository to the add binary repository params
-func (o *AddBinaryRepositoryParams) WithBinaryrepository(binaryrepository BinaryRepository.BinaryRepository) *AddBinaryRepositoryParams {
+func (o *AddBinaryRepositoryParams) WithBinaryrepository(binaryrepository models.BinaryRepository) *AddBinaryRepositoryParams {
 	o.SetBinaryrepository(binaryrepository)
 	return o
 }
 
 // SetBinaryrepository adds the binaryrepository to the add binary repository params
-func (o *AddBinaryRepositoryParams) SetBinaryrepository(binaryrepository BinaryRepository.BinaryRepository) {
+func (o *AddBinaryRepositoryParams) SetBinaryrepository(binaryrepository models.BinaryRepository) {
 	o.Binaryrepository = binaryrepository
 }
 

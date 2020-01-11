@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	BinaryRepository "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // GetBinaryRepositoriesReader is a Reader for the GetBinaryRepositories structure.
@@ -52,14 +52,14 @@ func NewGetBinaryRepositoriesOK() *GetBinaryRepositoriesOK {
 List of accessible binaryrepositories for the authenticated user
 */
 type GetBinaryRepositoriesOK struct {
-	Payload []BinaryRepository.BinaryRepository
+	Payload []models.BinaryRepository
 }
 
 func (o *GetBinaryRepositoriesOK) Error() string {
 	return fmt.Sprintf("[GET /binaryrepositories][%d] getBinaryRepositoriesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetBinaryRepositoriesOK) GetPayload() []BinaryRepository.BinaryRepository {
+func (o *GetBinaryRepositoriesOK) GetPayload() []models.BinaryRepository {
 	return o.Payload
 }
 

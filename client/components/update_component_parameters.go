@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Component "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewUpdateComponentParams creates a new UpdateComponentParams object
@@ -67,7 +67,7 @@ type UpdateComponentParams struct {
 	  Component object to be updated
 
 	*/
-	Component Component.Component
+	Component models.Component
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateComponentParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithComponent adds the component to the update component params
-func (o *UpdateComponentParams) WithComponent(component Component.Component) *UpdateComponentParams {
+func (o *UpdateComponentParams) WithComponent(component models.Component) *UpdateComponentParams {
 	o.SetComponent(component)
 	return o
 }
 
 // SetComponent adds the component to the update component params
-func (o *UpdateComponentParams) SetComponent(component Component.Component) {
+func (o *UpdateComponentParams) SetComponent(component models.Component) {
 	o.Component = component
 }
 

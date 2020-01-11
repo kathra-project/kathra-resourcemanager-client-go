@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	ImplementationVersion "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // GetAPIVersionReader is a Reader for the GetAPIVersion structure.
@@ -52,14 +52,14 @@ func NewGetAPIVersionOK() *GetAPIVersionOK {
 Returns the object
 */
 type GetAPIVersionOK struct {
-	Payload ImplementationVersion.ImplementationVersion
+	Payload models.APIVersion
 }
 
 func (o *GetAPIVersionOK) Error() string {
 	return fmt.Sprintf("[GET /apiversions/{resourceId}][%d] getApiVersionOK  %+v", 200, o.Payload)
 }
 
-func (o *GetAPIVersionOK) GetPayload() ImplementationVersion.ImplementationVersion {
+func (o *GetAPIVersionOK) GetPayload() models.APIVersion {
 	return o.Payload
 }
 

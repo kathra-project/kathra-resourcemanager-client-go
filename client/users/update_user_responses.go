@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	User "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // UpdateUserReader is a Reader for the UpdateUser structure.
@@ -52,14 +52,14 @@ func NewUpdateUserOK() *UpdateUserOK {
 Returns the modified object
 */
 type UpdateUserOK struct {
-	Payload User.User
+	Payload models.User
 }
 
 func (o *UpdateUserOK) Error() string {
 	return fmt.Sprintf("[PUT /users/{resourceId}][%d] updateUserOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateUserOK) GetPayload() User.User {
+func (o *UpdateUserOK) GetPayload() models.User {
 	return o.Payload
 }
 

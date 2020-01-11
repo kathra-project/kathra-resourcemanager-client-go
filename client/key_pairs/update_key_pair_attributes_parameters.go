@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	KeyPair "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewUpdateKeyPairAttributesParams creates a new UpdateKeyPairAttributesParams object
@@ -67,7 +67,7 @@ type UpdateKeyPairAttributesParams struct {
 	  KeyPair object to be updated
 
 	*/
-	Keypair KeyPair.KeyPair
+	Keypair models.KeyPair
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateKeyPairAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithKeypair adds the keypair to the update key pair attributes params
-func (o *UpdateKeyPairAttributesParams) WithKeypair(keypair KeyPair.KeyPair) *UpdateKeyPairAttributesParams {
+func (o *UpdateKeyPairAttributesParams) WithKeypair(keypair models.KeyPair) *UpdateKeyPairAttributesParams {
 	o.SetKeypair(keypair)
 	return o
 }
 
 // SetKeypair adds the keypair to the update key pair attributes params
-func (o *UpdateKeyPairAttributesParams) SetKeypair(keypair KeyPair.KeyPair) {
+func (o *UpdateKeyPairAttributesParams) SetKeypair(keypair models.KeyPair) {
 	o.Keypair = keypair
 }
 

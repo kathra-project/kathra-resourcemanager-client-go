@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Component "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // GetComponentsReader is a Reader for the GetComponents structure.
@@ -52,14 +52,14 @@ func NewGetComponentsOK() *GetComponentsOK {
 List of accessible components for the authenticated user
 */
 type GetComponentsOK struct {
-	Payload []Component.Component
+	Payload []models.Component
 }
 
 func (o *GetComponentsOK) Error() string {
 	return fmt.Sprintf("[GET /components][%d] getComponentsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetComponentsOK) GetPayload() []Component.Component {
+func (o *GetComponentsOK) GetPayload() []models.Component {
 	return o.Payload
 }
 

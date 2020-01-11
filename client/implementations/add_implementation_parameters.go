@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Implementation "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewAddImplementationParams creates a new AddImplementationParams object
@@ -67,7 +67,7 @@ type AddImplementationParams struct {
 	  Implementation object to be created
 
 	*/
-	Implementation Implementation.Implementation
+	Implementation models.Implementation
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddImplementationParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithImplementation adds the implementation to the add implementation params
-func (o *AddImplementationParams) WithImplementation(implementation Implementation.Implementation) *AddImplementationParams {
+func (o *AddImplementationParams) WithImplementation(implementation models.Implementation) *AddImplementationParams {
 	o.SetImplementation(implementation)
 	return o
 }
 
 // SetImplementation adds the implementation to the add implementation params
-func (o *AddImplementationParams) SetImplementation(implementation Implementation.Implementation) {
+func (o *AddImplementationParams) SetImplementation(implementation models.Implementation) {
 	o.Implementation = implementation
 }
 

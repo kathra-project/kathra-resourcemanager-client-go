@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Assignation "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // GetAssignationReader is a Reader for the GetAssignation structure.
@@ -52,14 +52,14 @@ func NewGetAssignationOK() *GetAssignationOK {
 Returns the object
 */
 type GetAssignationOK struct {
-	Payload Assignation.Assignation
+	Payload models.Assignation
 }
 
 func (o *GetAssignationOK) Error() string {
 	return fmt.Sprintf("[GET /assignations/{resourceId}][%d] getAssignationOK  %+v", 200, o.Payload)
 }
 
-func (o *GetAssignationOK) GetPayload() Assignation.Assignation {
+func (o *GetAssignationOK) GetPayload() models.Assignation {
 	return o.Payload
 }
 

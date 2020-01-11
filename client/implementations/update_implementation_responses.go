@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Implementation "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // UpdateImplementationReader is a Reader for the UpdateImplementation structure.
@@ -52,14 +52,14 @@ func NewUpdateImplementationOK() *UpdateImplementationOK {
 Returns the modified object
 */
 type UpdateImplementationOK struct {
-	Payload Implementation.Implementation
+	Payload models.Implementation
 }
 
 func (o *UpdateImplementationOK) Error() string {
 	return fmt.Sprintf("[PUT /implementations/{resourceId}][%d] updateImplementationOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateImplementationOK) GetPayload() Implementation.Implementation {
+func (o *UpdateImplementationOK) GetPayload() models.Implementation {
 	return o.Payload
 }
 

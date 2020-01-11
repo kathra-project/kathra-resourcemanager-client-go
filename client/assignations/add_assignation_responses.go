@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Assignation "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // AddAssignationReader is a Reader for the AddAssignation structure.
@@ -52,14 +52,14 @@ func NewAddAssignationOK() *AddAssignationOK {
 Returns the created object
 */
 type AddAssignationOK struct {
-	Payload Assignation.Assignation
+	Payload models.Assignation
 }
 
 func (o *AddAssignationOK) Error() string {
 	return fmt.Sprintf("[POST /assignations][%d] addAssignationOK  %+v", 200, o.Payload)
 }
 
-func (o *AddAssignationOK) GetPayload() Assignation.Assignation {
+func (o *AddAssignationOK) GetPayload() models.Assignation {
 	return o.Payload
 }
 

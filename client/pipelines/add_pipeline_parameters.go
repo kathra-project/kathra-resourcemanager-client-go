@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Pipeline "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // NewAddPipelineParams creates a new AddPipelineParams object
@@ -67,7 +67,7 @@ type AddPipelineParams struct {
 	  Pipeline object to be created
 
 	*/
-	Pipeline Pipeline.Pipeline
+	Pipeline models.Pipeline
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddPipelineParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithPipeline adds the pipeline to the add pipeline params
-func (o *AddPipelineParams) WithPipeline(pipeline Pipeline.Pipeline) *AddPipelineParams {
+func (o *AddPipelineParams) WithPipeline(pipeline models.Pipeline) *AddPipelineParams {
 	o.SetPipeline(pipeline)
 	return o
 }
 
 // SetPipeline adds the pipeline to the add pipeline params
-func (o *AddPipelineParams) SetPipeline(pipeline Pipeline.Pipeline) {
+func (o *AddPipelineParams) SetPipeline(pipeline models.Pipeline) {
 	o.Pipeline = pipeline
 }
 

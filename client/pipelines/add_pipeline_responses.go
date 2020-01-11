@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	Pipeline "github.com/kathra-project/kathra-core-model-go/models"
+	models "github.com/kathra-project/kathra-resourcemanager-client-go/models"
 )
 
 // AddPipelineReader is a Reader for the AddPipeline structure.
@@ -52,14 +52,14 @@ func NewAddPipelineOK() *AddPipelineOK {
 Returns the created object
 */
 type AddPipelineOK struct {
-	Payload Pipeline.Pipeline
+	Payload models.Pipeline
 }
 
 func (o *AddPipelineOK) Error() string {
 	return fmt.Sprintf("[POST /pipelines][%d] addPipelineOK  %+v", 200, o.Payload)
 }
 
-func (o *AddPipelineOK) GetPayload() Pipeline.Pipeline {
+func (o *AddPipelineOK) GetPayload() models.Pipeline {
 	return o.Payload
 }
 
