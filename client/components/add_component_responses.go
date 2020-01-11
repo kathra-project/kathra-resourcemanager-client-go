@@ -52,21 +52,23 @@ func NewAddComponentOK() *AddComponentOK {
 Returns the created object
 */
 type AddComponentOK struct {
-	Payload models.Component
+	Payload *models.Component
 }
 
 func (o *AddComponentOK) Error() string {
 	return fmt.Sprintf("[POST /components][%d] addComponentOK  %+v", 200, o.Payload)
 }
 
-func (o *AddComponentOK) GetPayload() models.Component {
+func (o *AddComponentOK) GetPayload() *models.Component {
 	return o.Payload
 }
 
 func (o *AddComponentOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Component)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

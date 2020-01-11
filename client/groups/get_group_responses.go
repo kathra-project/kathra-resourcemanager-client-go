@@ -52,21 +52,23 @@ func NewGetGroupOK() *GetGroupOK {
 Returns the object
 */
 type GetGroupOK struct {
-	Payload models.Group
+	Payload *models.Group
 }
 
 func (o *GetGroupOK) Error() string {
 	return fmt.Sprintf("[GET /groups/{resourceId}][%d] getGroupOK  %+v", 200, o.Payload)
 }
 
-func (o *GetGroupOK) GetPayload() models.Group {
+func (o *GetGroupOK) GetPayload() *models.Group {
 	return o.Payload
 }
 
 func (o *GetGroupOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Group)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

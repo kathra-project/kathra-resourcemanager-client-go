@@ -67,7 +67,7 @@ type AddSourceRepositoryParams struct {
 	  SourceRepository object to be created
 
 	*/
-	Sourcerepository models.SourceRepository
+	Sourcerepository *models.SourceRepository
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddSourceRepositoryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithSourcerepository adds the sourcerepository to the add source repository params
-func (o *AddSourceRepositoryParams) WithSourcerepository(sourcerepository models.SourceRepository) *AddSourceRepositoryParams {
+func (o *AddSourceRepositoryParams) WithSourcerepository(sourcerepository *models.SourceRepository) *AddSourceRepositoryParams {
 	o.SetSourcerepository(sourcerepository)
 	return o
 }
 
 // SetSourcerepository adds the sourcerepository to the add source repository params
-func (o *AddSourceRepositoryParams) SetSourcerepository(sourcerepository models.SourceRepository) {
+func (o *AddSourceRepositoryParams) SetSourcerepository(sourcerepository *models.SourceRepository) {
 	o.Sourcerepository = sourcerepository
 }
 

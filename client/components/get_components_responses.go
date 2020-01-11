@@ -52,14 +52,14 @@ func NewGetComponentsOK() *GetComponentsOK {
 List of accessible components for the authenticated user
 */
 type GetComponentsOK struct {
-	Payload []models.Component
+	Payload []*models.Component
 }
 
 func (o *GetComponentsOK) Error() string {
 	return fmt.Sprintf("[GET /components][%d] getComponentsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetComponentsOK) GetPayload() []models.Component {
+func (o *GetComponentsOK) GetPayload() []*models.Component {
 	return o.Payload
 }
 

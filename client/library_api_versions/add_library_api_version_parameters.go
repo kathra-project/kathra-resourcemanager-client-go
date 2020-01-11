@@ -67,7 +67,7 @@ type AddLibraryAPIVersionParams struct {
 	  LibraryApiVersion object to be created
 
 	*/
-	Libraryapiversion models.LibraryAPIVersion
+	Libraryapiversion *models.LibraryAPIVersion
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddLibraryAPIVersionParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithLibraryapiversion adds the libraryapiversion to the add library Api version params
-func (o *AddLibraryAPIVersionParams) WithLibraryapiversion(libraryapiversion models.LibraryAPIVersion) *AddLibraryAPIVersionParams {
+func (o *AddLibraryAPIVersionParams) WithLibraryapiversion(libraryapiversion *models.LibraryAPIVersion) *AddLibraryAPIVersionParams {
 	o.SetLibraryapiversion(libraryapiversion)
 	return o
 }
 
 // SetLibraryapiversion adds the libraryapiversion to the add library Api version params
-func (o *AddLibraryAPIVersionParams) SetLibraryapiversion(libraryapiversion models.LibraryAPIVersion) {
+func (o *AddLibraryAPIVersionParams) SetLibraryapiversion(libraryapiversion *models.LibraryAPIVersion) {
 	o.Libraryapiversion = libraryapiversion
 }
 

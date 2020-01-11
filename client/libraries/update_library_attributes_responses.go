@@ -52,21 +52,23 @@ func NewUpdateLibraryAttributesOK() *UpdateLibraryAttributesOK {
 Returns the modified object
 */
 type UpdateLibraryAttributesOK struct {
-	Payload models.Library
+	Payload *models.Library
 }
 
 func (o *UpdateLibraryAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /libraries/{resourceId}][%d] updateLibraryAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateLibraryAttributesOK) GetPayload() models.Library {
+func (o *UpdateLibraryAttributesOK) GetPayload() *models.Library {
 	return o.Payload
 }
 
 func (o *UpdateLibraryAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Library)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

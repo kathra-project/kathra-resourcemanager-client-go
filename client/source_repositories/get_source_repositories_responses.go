@@ -52,14 +52,14 @@ func NewGetSourceRepositoriesOK() *GetSourceRepositoriesOK {
 List of accessible sourcerepositories for the authenticated user
 */
 type GetSourceRepositoriesOK struct {
-	Payload []models.SourceRepository
+	Payload []*models.SourceRepository
 }
 
 func (o *GetSourceRepositoriesOK) Error() string {
 	return fmt.Sprintf("[GET /sourcerepositories][%d] getSourceRepositoriesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetSourceRepositoriesOK) GetPayload() []models.SourceRepository {
+func (o *GetSourceRepositoriesOK) GetPayload() []*models.SourceRepository {
 	return o.Payload
 }
 

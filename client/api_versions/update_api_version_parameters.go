@@ -67,7 +67,7 @@ type UpdateAPIVersionParams struct {
 	  ApiVersion object to be updated
 
 	*/
-	Apiversion models.APIVersion
+	Apiversion *models.APIVersion
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateAPIVersionParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithApiversion adds the apiversion to the update Api version params
-func (o *UpdateAPIVersionParams) WithApiversion(apiversion models.APIVersion) *UpdateAPIVersionParams {
+func (o *UpdateAPIVersionParams) WithApiversion(apiversion *models.APIVersion) *UpdateAPIVersionParams {
 	o.SetApiversion(apiversion)
 	return o
 }
 
 // SetApiversion adds the apiversion to the update Api version params
-func (o *UpdateAPIVersionParams) SetApiversion(apiversion models.APIVersion) {
+func (o *UpdateAPIVersionParams) SetApiversion(apiversion *models.APIVersion) {
 	o.Apiversion = apiversion
 }
 

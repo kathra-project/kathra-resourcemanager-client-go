@@ -67,7 +67,7 @@ type UpdateBinaryRepositoryParams struct {
 	  BinaryRepository object to be updated
 
 	*/
-	Binaryrepository models.BinaryRepository
+	Binaryrepository *models.BinaryRepository
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateBinaryRepositoryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithBinaryrepository adds the binaryrepository to the update binary repository params
-func (o *UpdateBinaryRepositoryParams) WithBinaryrepository(binaryrepository models.BinaryRepository) *UpdateBinaryRepositoryParams {
+func (o *UpdateBinaryRepositoryParams) WithBinaryrepository(binaryrepository *models.BinaryRepository) *UpdateBinaryRepositoryParams {
 	o.SetBinaryrepository(binaryrepository)
 	return o
 }
 
 // SetBinaryrepository adds the binaryrepository to the update binary repository params
-func (o *UpdateBinaryRepositoryParams) SetBinaryrepository(binaryrepository models.BinaryRepository) {
+func (o *UpdateBinaryRepositoryParams) SetBinaryrepository(binaryrepository *models.BinaryRepository) {
 	o.Binaryrepository = binaryrepository
 }
 

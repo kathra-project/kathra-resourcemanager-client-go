@@ -52,21 +52,23 @@ func NewUpdateLibraryAPIVersionOK() *UpdateLibraryAPIVersionOK {
 Returns the modified object
 */
 type UpdateLibraryAPIVersionOK struct {
-	Payload models.LibraryAPIVersion
+	Payload *models.LibraryAPIVersion
 }
 
 func (o *UpdateLibraryAPIVersionOK) Error() string {
 	return fmt.Sprintf("[PUT /libraryapiversions/{resourceId}][%d] updateLibraryApiVersionOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateLibraryAPIVersionOK) GetPayload() models.LibraryAPIVersion {
+func (o *UpdateLibraryAPIVersionOK) GetPayload() *models.LibraryAPIVersion {
 	return o.Payload
 }
 
 func (o *UpdateLibraryAPIVersionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.LibraryAPIVersion)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -67,7 +67,7 @@ type UpdateGroupAttributesParams struct {
 	  Group object to be updated
 
 	*/
-	Group models.Group
+	Group *models.Group
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateGroupAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithGroup adds the group to the update group attributes params
-func (o *UpdateGroupAttributesParams) WithGroup(group models.Group) *UpdateGroupAttributesParams {
+func (o *UpdateGroupAttributesParams) WithGroup(group *models.Group) *UpdateGroupAttributesParams {
 	o.SetGroup(group)
 	return o
 }
 
 // SetGroup adds the group to the update group attributes params
-func (o *UpdateGroupAttributesParams) SetGroup(group models.Group) {
+func (o *UpdateGroupAttributesParams) SetGroup(group *models.Group) {
 	o.Group = group
 }
 

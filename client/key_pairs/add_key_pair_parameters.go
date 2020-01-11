@@ -67,7 +67,7 @@ type AddKeyPairParams struct {
 	  KeyPair object to be created
 
 	*/
-	Keypair models.KeyPair
+	Keypair *models.KeyPair
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddKeyPairParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithKeypair adds the keypair to the add key pair params
-func (o *AddKeyPairParams) WithKeypair(keypair models.KeyPair) *AddKeyPairParams {
+func (o *AddKeyPairParams) WithKeypair(keypair *models.KeyPair) *AddKeyPairParams {
 	o.SetKeypair(keypair)
 	return o
 }
 
 // SetKeypair adds the keypair to the add key pair params
-func (o *AddKeyPairParams) SetKeypair(keypair models.KeyPair) {
+func (o *AddKeyPairParams) SetKeypair(keypair *models.KeyPair) {
 	o.Keypair = keypair
 }
 

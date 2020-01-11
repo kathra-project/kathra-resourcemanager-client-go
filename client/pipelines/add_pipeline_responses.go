@@ -52,21 +52,23 @@ func NewAddPipelineOK() *AddPipelineOK {
 Returns the created object
 */
 type AddPipelineOK struct {
-	Payload models.Pipeline
+	Payload *models.Pipeline
 }
 
 func (o *AddPipelineOK) Error() string {
 	return fmt.Sprintf("[POST /pipelines][%d] addPipelineOK  %+v", 200, o.Payload)
 }
 
-func (o *AddPipelineOK) GetPayload() models.Pipeline {
+func (o *AddPipelineOK) GetPayload() *models.Pipeline {
 	return o.Payload
 }
 
 func (o *AddPipelineOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Pipeline)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

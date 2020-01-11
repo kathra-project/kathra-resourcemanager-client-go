@@ -52,14 +52,14 @@ func NewGetGroupsOK() *GetGroupsOK {
 List of accessible groups for the authenticated user
 */
 type GetGroupsOK struct {
-	Payload []models.Group
+	Payload []*models.Group
 }
 
 func (o *GetGroupsOK) Error() string {
 	return fmt.Sprintf("[GET /groups][%d] getGroupsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetGroupsOK) GetPayload() []models.Group {
+func (o *GetGroupsOK) GetPayload() []*models.Group {
 	return o.Payload
 }
 

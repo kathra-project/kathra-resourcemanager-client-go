@@ -52,21 +52,23 @@ func NewGetSourceRepositoryOK() *GetSourceRepositoryOK {
 Returns the object
 */
 type GetSourceRepositoryOK struct {
-	Payload models.SourceRepository
+	Payload *models.SourceRepository
 }
 
 func (o *GetSourceRepositoryOK) Error() string {
 	return fmt.Sprintf("[GET /sourcerepositories/{resourceId}][%d] getSourceRepositoryOK  %+v", 200, o.Payload)
 }
 
-func (o *GetSourceRepositoryOK) GetPayload() models.SourceRepository {
+func (o *GetSourceRepositoryOK) GetPayload() *models.SourceRepository {
 	return o.Payload
 }
 
 func (o *GetSourceRepositoryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.SourceRepository)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

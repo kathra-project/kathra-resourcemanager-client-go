@@ -72,7 +72,7 @@ type UpdateUserParams struct {
 	  User object to be updated
 
 	*/
-	User models.User
+	User *models.User
 
 	timeout    time.Duration
 	Context    context.Context
@@ -124,13 +124,13 @@ func (o *UpdateUserParams) SetResourceID(resourceID string) {
 }
 
 // WithUser adds the user to the update user params
-func (o *UpdateUserParams) WithUser(user models.User) *UpdateUserParams {
+func (o *UpdateUserParams) WithUser(user *models.User) *UpdateUserParams {
 	o.SetUser(user)
 	return o
 }
 
 // SetUser adds the user to the update user params
-func (o *UpdateUserParams) SetUser(user models.User) {
+func (o *UpdateUserParams) SetUser(user *models.User) {
 	o.User = user
 }
 

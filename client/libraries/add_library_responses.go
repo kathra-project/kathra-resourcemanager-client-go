@@ -52,21 +52,23 @@ func NewAddLibraryOK() *AddLibraryOK {
 Returns the created object
 */
 type AddLibraryOK struct {
-	Payload models.Library
+	Payload *models.Library
 }
 
 func (o *AddLibraryOK) Error() string {
 	return fmt.Sprintf("[POST /libraries][%d] addLibraryOK  %+v", 200, o.Payload)
 }
 
-func (o *AddLibraryOK) GetPayload() models.Library {
+func (o *AddLibraryOK) GetPayload() *models.Library {
 	return o.Payload
 }
 
 func (o *AddLibraryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Library)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -52,21 +52,23 @@ func NewUpdateAssignationOK() *UpdateAssignationOK {
 Returns the modified object
 */
 type UpdateAssignationOK struct {
-	Payload models.Assignation
+	Payload *models.Assignation
 }
 
 func (o *UpdateAssignationOK) Error() string {
 	return fmt.Sprintf("[PUT /assignations/{resourceId}][%d] updateAssignationOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateAssignationOK) GetPayload() models.Assignation {
+func (o *UpdateAssignationOK) GetPayload() *models.Assignation {
 	return o.Payload
 }
 
 func (o *UpdateAssignationOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Assignation)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

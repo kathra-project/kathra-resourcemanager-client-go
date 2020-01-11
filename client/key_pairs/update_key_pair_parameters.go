@@ -67,7 +67,7 @@ type UpdateKeyPairParams struct {
 	  KeyPair object to be updated
 
 	*/
-	Keypair models.KeyPair
+	Keypair *models.KeyPair
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateKeyPairParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithKeypair adds the keypair to the update key pair params
-func (o *UpdateKeyPairParams) WithKeypair(keypair models.KeyPair) *UpdateKeyPairParams {
+func (o *UpdateKeyPairParams) WithKeypair(keypair *models.KeyPair) *UpdateKeyPairParams {
 	o.SetKeypair(keypair)
 	return o
 }
 
 // SetKeypair adds the keypair to the update key pair params
-func (o *UpdateKeyPairParams) SetKeypair(keypair models.KeyPair) {
+func (o *UpdateKeyPairParams) SetKeypair(keypair *models.KeyPair) {
 	o.Keypair = keypair
 }
 

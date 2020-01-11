@@ -52,14 +52,14 @@ func NewGetCatalogEntriesOK() *GetCatalogEntriesOK {
 List of accessible catalogentries for the authenticated user
 */
 type GetCatalogEntriesOK struct {
-	Payload []models.CatalogEntry
+	Payload []*models.CatalogEntry
 }
 
 func (o *GetCatalogEntriesOK) Error() string {
 	return fmt.Sprintf("[GET /catalogentries][%d] getCatalogEntriesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetCatalogEntriesOK) GetPayload() []models.CatalogEntry {
+func (o *GetCatalogEntriesOK) GetPayload() []*models.CatalogEntry {
 	return o.Payload
 }
 

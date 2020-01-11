@@ -52,14 +52,14 @@ func NewGetBinaryRepositoriesOK() *GetBinaryRepositoriesOK {
 List of accessible binaryrepositories for the authenticated user
 */
 type GetBinaryRepositoriesOK struct {
-	Payload []models.BinaryRepository
+	Payload []*models.BinaryRepository
 }
 
 func (o *GetBinaryRepositoriesOK) Error() string {
 	return fmt.Sprintf("[GET /binaryrepositories][%d] getBinaryRepositoriesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetBinaryRepositoriesOK) GetPayload() []models.BinaryRepository {
+func (o *GetBinaryRepositoriesOK) GetPayload() []*models.BinaryRepository {
 	return o.Payload
 }
 

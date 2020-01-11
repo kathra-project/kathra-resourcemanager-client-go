@@ -52,21 +52,23 @@ func NewAddKeyPairOK() *AddKeyPairOK {
 Returns the created object
 */
 type AddKeyPairOK struct {
-	Payload models.KeyPair
+	Payload *models.KeyPair
 }
 
 func (o *AddKeyPairOK) Error() string {
 	return fmt.Sprintf("[POST /keypairs][%d] addKeyPairOK  %+v", 200, o.Payload)
 }
 
-func (o *AddKeyPairOK) GetPayload() models.KeyPair {
+func (o *AddKeyPairOK) GetPayload() *models.KeyPair {
 	return o.Payload
 }
 
 func (o *AddKeyPairOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.KeyPair)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

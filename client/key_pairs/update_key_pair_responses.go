@@ -52,21 +52,23 @@ func NewUpdateKeyPairOK() *UpdateKeyPairOK {
 Returns the modified object
 */
 type UpdateKeyPairOK struct {
-	Payload models.KeyPair
+	Payload *models.KeyPair
 }
 
 func (o *UpdateKeyPairOK) Error() string {
 	return fmt.Sprintf("[PUT /keypairs/{resourceId}][%d] updateKeyPairOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateKeyPairOK) GetPayload() models.KeyPair {
+func (o *UpdateKeyPairOK) GetPayload() *models.KeyPair {
 	return o.Payload
 }
 
 func (o *UpdateKeyPairOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.KeyPair)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -52,21 +52,23 @@ func NewUpdateGroupOK() *UpdateGroupOK {
 Returns the modified object
 */
 type UpdateGroupOK struct {
-	Payload models.Group
+	Payload *models.Group
 }
 
 func (o *UpdateGroupOK) Error() string {
 	return fmt.Sprintf("[PUT /groups/{resourceId}][%d] updateGroupOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateGroupOK) GetPayload() models.Group {
+func (o *UpdateGroupOK) GetPayload() *models.Group {
 	return o.Payload
 }
 
 func (o *UpdateGroupOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Group)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

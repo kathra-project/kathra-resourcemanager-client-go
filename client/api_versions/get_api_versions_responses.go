@@ -52,14 +52,14 @@ func NewGetAPIVersionsOK() *GetAPIVersionsOK {
 List of accessible apiversions for the authenticated user
 */
 type GetAPIVersionsOK struct {
-	Payload []models.APIVersion
+	Payload []*models.APIVersion
 }
 
 func (o *GetAPIVersionsOK) Error() string {
 	return fmt.Sprintf("[GET /apiversions][%d] getApiVersionsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetAPIVersionsOK) GetPayload() []models.APIVersion {
+func (o *GetAPIVersionsOK) GetPayload() []*models.APIVersion {
 	return o.Payload
 }
 

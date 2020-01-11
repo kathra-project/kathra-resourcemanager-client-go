@@ -52,21 +52,23 @@ func NewUpdatePipelineOK() *UpdatePipelineOK {
 Returns the modified object
 */
 type UpdatePipelineOK struct {
-	Payload models.Pipeline
+	Payload *models.Pipeline
 }
 
 func (o *UpdatePipelineOK) Error() string {
 	return fmt.Sprintf("[PUT /pipelines/{resourceId}][%d] updatePipelineOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdatePipelineOK) GetPayload() models.Pipeline {
+func (o *UpdatePipelineOK) GetPayload() *models.Pipeline {
 	return o.Payload
 }
 
 func (o *UpdatePipelineOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Pipeline)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

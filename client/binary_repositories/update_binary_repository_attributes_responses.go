@@ -52,21 +52,23 @@ func NewUpdateBinaryRepositoryAttributesOK() *UpdateBinaryRepositoryAttributesOK
 Returns the modified object
 */
 type UpdateBinaryRepositoryAttributesOK struct {
-	Payload models.BinaryRepository
+	Payload *models.BinaryRepository
 }
 
 func (o *UpdateBinaryRepositoryAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /binaryrepositories/{resourceId}][%d] updateBinaryRepositoryAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateBinaryRepositoryAttributesOK) GetPayload() models.BinaryRepository {
+func (o *UpdateBinaryRepositoryAttributesOK) GetPayload() *models.BinaryRepository {
 	return o.Payload
 }
 
 func (o *UpdateBinaryRepositoryAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.BinaryRepository)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

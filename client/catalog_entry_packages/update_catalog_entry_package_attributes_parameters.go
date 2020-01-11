@@ -67,7 +67,7 @@ type UpdateCatalogEntryPackageAttributesParams struct {
 	  CatalogEntryPackage object to be updated
 
 	*/
-	Catalogentrypackage models.CatalogEntryPackage
+	Catalogentrypackage *models.CatalogEntryPackage
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateCatalogEntryPackageAttributesParams) SetHTTPClient(client *http.C
 }
 
 // WithCatalogentrypackage adds the catalogentrypackage to the update catalog entry package attributes params
-func (o *UpdateCatalogEntryPackageAttributesParams) WithCatalogentrypackage(catalogentrypackage models.CatalogEntryPackage) *UpdateCatalogEntryPackageAttributesParams {
+func (o *UpdateCatalogEntryPackageAttributesParams) WithCatalogentrypackage(catalogentrypackage *models.CatalogEntryPackage) *UpdateCatalogEntryPackageAttributesParams {
 	o.SetCatalogentrypackage(catalogentrypackage)
 	return o
 }
 
 // SetCatalogentrypackage adds the catalogentrypackage to the update catalog entry package attributes params
-func (o *UpdateCatalogEntryPackageAttributesParams) SetCatalogentrypackage(catalogentrypackage models.CatalogEntryPackage) {
+func (o *UpdateCatalogEntryPackageAttributesParams) SetCatalogentrypackage(catalogentrypackage *models.CatalogEntryPackage) {
 	o.Catalogentrypackage = catalogentrypackage
 }
 

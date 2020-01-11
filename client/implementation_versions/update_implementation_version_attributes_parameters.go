@@ -67,7 +67,7 @@ type UpdateImplementationVersionAttributesParams struct {
 	  ImplementationVersion object to be updated
 
 	*/
-	Implementationversion models.ImplementationVersion
+	Implementationversion *models.ImplementationVersion
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateImplementationVersionAttributesParams) SetHTTPClient(client *http
 }
 
 // WithImplementationversion adds the implementationversion to the update implementation version attributes params
-func (o *UpdateImplementationVersionAttributesParams) WithImplementationversion(implementationversion models.ImplementationVersion) *UpdateImplementationVersionAttributesParams {
+func (o *UpdateImplementationVersionAttributesParams) WithImplementationversion(implementationversion *models.ImplementationVersion) *UpdateImplementationVersionAttributesParams {
 	o.SetImplementationversion(implementationversion)
 	return o
 }
 
 // SetImplementationversion adds the implementationversion to the update implementation version attributes params
-func (o *UpdateImplementationVersionAttributesParams) SetImplementationversion(implementationversion models.ImplementationVersion) {
+func (o *UpdateImplementationVersionAttributesParams) SetImplementationversion(implementationversion *models.ImplementationVersion) {
 	o.Implementationversion = implementationversion
 }
 

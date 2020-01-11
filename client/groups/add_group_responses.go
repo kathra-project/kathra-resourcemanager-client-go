@@ -52,21 +52,23 @@ func NewAddGroupOK() *AddGroupOK {
 Returns the created object
 */
 type AddGroupOK struct {
-	Payload models.Group
+	Payload *models.Group
 }
 
 func (o *AddGroupOK) Error() string {
 	return fmt.Sprintf("[POST /groups][%d] addGroupOK  %+v", 200, o.Payload)
 }
 
-func (o *AddGroupOK) GetPayload() models.Group {
+func (o *AddGroupOK) GetPayload() *models.Group {
 	return o.Payload
 }
 
 func (o *AddGroupOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Group)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

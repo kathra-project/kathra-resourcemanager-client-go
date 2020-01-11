@@ -52,21 +52,23 @@ func NewGetBinaryRepositoryOK() *GetBinaryRepositoryOK {
 Returns the object
 */
 type GetBinaryRepositoryOK struct {
-	Payload models.BinaryRepository
+	Payload *models.BinaryRepository
 }
 
 func (o *GetBinaryRepositoryOK) Error() string {
 	return fmt.Sprintf("[GET /binaryrepositories/{resourceId}][%d] getBinaryRepositoryOK  %+v", 200, o.Payload)
 }
 
-func (o *GetBinaryRepositoryOK) GetPayload() models.BinaryRepository {
+func (o *GetBinaryRepositoryOK) GetPayload() *models.BinaryRepository {
 	return o.Payload
 }
 
 func (o *GetBinaryRepositoryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.BinaryRepository)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

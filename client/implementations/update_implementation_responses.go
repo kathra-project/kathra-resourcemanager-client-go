@@ -52,21 +52,23 @@ func NewUpdateImplementationOK() *UpdateImplementationOK {
 Returns the modified object
 */
 type UpdateImplementationOK struct {
-	Payload models.Implementation
+	Payload *models.Implementation
 }
 
 func (o *UpdateImplementationOK) Error() string {
 	return fmt.Sprintf("[PUT /implementations/{resourceId}][%d] updateImplementationOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateImplementationOK) GetPayload() models.Implementation {
+func (o *UpdateImplementationOK) GetPayload() *models.Implementation {
 	return o.Payload
 }
 
 func (o *UpdateImplementationOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Implementation)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

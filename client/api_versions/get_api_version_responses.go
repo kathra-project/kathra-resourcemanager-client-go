@@ -52,21 +52,23 @@ func NewGetAPIVersionOK() *GetAPIVersionOK {
 Returns the object
 */
 type GetAPIVersionOK struct {
-	Payload models.APIVersion
+	Payload *models.APIVersion
 }
 
 func (o *GetAPIVersionOK) Error() string {
 	return fmt.Sprintf("[GET /apiversions/{resourceId}][%d] getApiVersionOK  %+v", 200, o.Payload)
 }
 
-func (o *GetAPIVersionOK) GetPayload() models.APIVersion {
+func (o *GetAPIVersionOK) GetPayload() *models.APIVersion {
 	return o.Payload
 }
 
 func (o *GetAPIVersionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.APIVersion)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

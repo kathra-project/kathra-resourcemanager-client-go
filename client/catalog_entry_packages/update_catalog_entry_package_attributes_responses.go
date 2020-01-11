@@ -52,21 +52,23 @@ func NewUpdateCatalogEntryPackageAttributesOK() *UpdateCatalogEntryPackageAttrib
 Returns the modified object
 */
 type UpdateCatalogEntryPackageAttributesOK struct {
-	Payload models.CatalogEntryPackage
+	Payload *models.CatalogEntryPackage
 }
 
 func (o *UpdateCatalogEntryPackageAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /catalogentrypackages/{resourceId}][%d] updateCatalogEntryPackageAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateCatalogEntryPackageAttributesOK) GetPayload() models.CatalogEntryPackage {
+func (o *UpdateCatalogEntryPackageAttributesOK) GetPayload() *models.CatalogEntryPackage {
 	return o.Payload
 }
 
 func (o *UpdateCatalogEntryPackageAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.CatalogEntryPackage)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -52,14 +52,14 @@ func NewGetImplementationVersionsOK() *GetImplementationVersionsOK {
 List of accessible implementationversions for the authenticated user
 */
 type GetImplementationVersionsOK struct {
-	Payload []models.ImplementationVersion
+	Payload []*models.ImplementationVersion
 }
 
 func (o *GetImplementationVersionsOK) Error() string {
 	return fmt.Sprintf("[GET /implementationversions][%d] getImplementationVersionsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetImplementationVersionsOK) GetPayload() []models.ImplementationVersion {
+func (o *GetImplementationVersionsOK) GetPayload() []*models.ImplementationVersion {
 	return o.Payload
 }
 

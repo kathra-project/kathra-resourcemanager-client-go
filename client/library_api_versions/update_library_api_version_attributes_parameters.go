@@ -67,7 +67,7 @@ type UpdateLibraryAPIVersionAttributesParams struct {
 	  LibraryApiVersion object to be updated
 
 	*/
-	Libraryapiversion models.LibraryAPIVersion
+	Libraryapiversion *models.LibraryAPIVersion
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateLibraryAPIVersionAttributesParams) SetHTTPClient(client *http.Cli
 }
 
 // WithLibraryapiversion adds the libraryapiversion to the update library Api version attributes params
-func (o *UpdateLibraryAPIVersionAttributesParams) WithLibraryapiversion(libraryapiversion models.LibraryAPIVersion) *UpdateLibraryAPIVersionAttributesParams {
+func (o *UpdateLibraryAPIVersionAttributesParams) WithLibraryapiversion(libraryapiversion *models.LibraryAPIVersion) *UpdateLibraryAPIVersionAttributesParams {
 	o.SetLibraryapiversion(libraryapiversion)
 	return o
 }
 
 // SetLibraryapiversion adds the libraryapiversion to the update library Api version attributes params
-func (o *UpdateLibraryAPIVersionAttributesParams) SetLibraryapiversion(libraryapiversion models.LibraryAPIVersion) {
+func (o *UpdateLibraryAPIVersionAttributesParams) SetLibraryapiversion(libraryapiversion *models.LibraryAPIVersion) {
 	o.Libraryapiversion = libraryapiversion
 }
 

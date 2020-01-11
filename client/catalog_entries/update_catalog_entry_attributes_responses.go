@@ -52,21 +52,23 @@ func NewUpdateCatalogEntryAttributesOK() *UpdateCatalogEntryAttributesOK {
 Returns the modified object
 */
 type UpdateCatalogEntryAttributesOK struct {
-	Payload models.CatalogEntry
+	Payload *models.CatalogEntry
 }
 
 func (o *UpdateCatalogEntryAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /catalogentries/{resourceId}][%d] updateCatalogEntryAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateCatalogEntryAttributesOK) GetPayload() models.CatalogEntry {
+func (o *UpdateCatalogEntryAttributesOK) GetPayload() *models.CatalogEntry {
 	return o.Payload
 }
 
 func (o *UpdateCatalogEntryAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.CatalogEntry)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

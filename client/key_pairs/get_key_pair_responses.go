@@ -52,21 +52,23 @@ func NewGetKeyPairOK() *GetKeyPairOK {
 Returns the object
 */
 type GetKeyPairOK struct {
-	Payload models.KeyPair
+	Payload *models.KeyPair
 }
 
 func (o *GetKeyPairOK) Error() string {
 	return fmt.Sprintf("[GET /keypairs/{resourceId}][%d] getKeyPairOK  %+v", 200, o.Payload)
 }
 
-func (o *GetKeyPairOK) GetPayload() models.KeyPair {
+func (o *GetKeyPairOK) GetPayload() *models.KeyPair {
 	return o.Payload
 }
 
 func (o *GetKeyPairOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.KeyPair)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

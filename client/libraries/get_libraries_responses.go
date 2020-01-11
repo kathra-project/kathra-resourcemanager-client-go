@@ -52,14 +52,14 @@ func NewGetLibrariesOK() *GetLibrariesOK {
 List of accessible libraries for the authenticated user
 */
 type GetLibrariesOK struct {
-	Payload []models.Library
+	Payload []*models.Library
 }
 
 func (o *GetLibrariesOK) Error() string {
 	return fmt.Sprintf("[GET /libraries][%d] getLibrariesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetLibrariesOK) GetPayload() []models.Library {
+func (o *GetLibrariesOK) GetPayload() []*models.Library {
 	return o.Payload
 }
 

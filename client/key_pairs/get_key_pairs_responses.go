@@ -52,14 +52,14 @@ func NewGetKeyPairsOK() *GetKeyPairsOK {
 List of accessible keypairs for the authenticated user
 */
 type GetKeyPairsOK struct {
-	Payload []models.KeyPair
+	Payload []*models.KeyPair
 }
 
 func (o *GetKeyPairsOK) Error() string {
 	return fmt.Sprintf("[GET /keypairs][%d] getKeyPairsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetKeyPairsOK) GetPayload() []models.KeyPair {
+func (o *GetKeyPairsOK) GetPayload() []*models.KeyPair {
 	return o.Payload
 }
 

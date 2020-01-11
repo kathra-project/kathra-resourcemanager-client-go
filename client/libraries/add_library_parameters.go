@@ -67,7 +67,7 @@ type AddLibraryParams struct {
 	  Library object to be created
 
 	*/
-	Library models.Library
+	Library *models.Library
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddLibraryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithLibrary adds the library to the add library params
-func (o *AddLibraryParams) WithLibrary(library models.Library) *AddLibraryParams {
+func (o *AddLibraryParams) WithLibrary(library *models.Library) *AddLibraryParams {
 	o.SetLibrary(library)
 	return o
 }
 
 // SetLibrary adds the library to the add library params
-func (o *AddLibraryParams) SetLibrary(library models.Library) {
+func (o *AddLibraryParams) SetLibrary(library *models.Library) {
 	o.Library = library
 }
 

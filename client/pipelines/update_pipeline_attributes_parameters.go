@@ -67,7 +67,7 @@ type UpdatePipelineAttributesParams struct {
 	  Pipeline object to be updated
 
 	*/
-	Pipeline models.Pipeline
+	Pipeline *models.Pipeline
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdatePipelineAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithPipeline adds the pipeline to the update pipeline attributes params
-func (o *UpdatePipelineAttributesParams) WithPipeline(pipeline models.Pipeline) *UpdatePipelineAttributesParams {
+func (o *UpdatePipelineAttributesParams) WithPipeline(pipeline *models.Pipeline) *UpdatePipelineAttributesParams {
 	o.SetPipeline(pipeline)
 	return o
 }
 
 // SetPipeline adds the pipeline to the update pipeline attributes params
-func (o *UpdatePipelineAttributesParams) SetPipeline(pipeline models.Pipeline) {
+func (o *UpdatePipelineAttributesParams) SetPipeline(pipeline *models.Pipeline) {
 	o.Pipeline = pipeline
 }
 

@@ -67,7 +67,7 @@ type UpdateComponentAttributesParams struct {
 	  Component object to be updated
 
 	*/
-	Component models.Component
+	Component *models.Component
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateComponentAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithComponent adds the component to the update component attributes params
-func (o *UpdateComponentAttributesParams) WithComponent(component models.Component) *UpdateComponentAttributesParams {
+func (o *UpdateComponentAttributesParams) WithComponent(component *models.Component) *UpdateComponentAttributesParams {
 	o.SetComponent(component)
 	return o
 }
 
 // SetComponent adds the component to the update component attributes params
-func (o *UpdateComponentAttributesParams) SetComponent(component models.Component) {
+func (o *UpdateComponentAttributesParams) SetComponent(component *models.Component) {
 	o.Component = component
 }
 

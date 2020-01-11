@@ -72,7 +72,7 @@ type UpdateSourceRepositoryParams struct {
 	  SourceRepository object to be updated
 
 	*/
-	Sourcerepository models.SourceRepository
+	Sourcerepository *models.SourceRepository
 
 	timeout    time.Duration
 	Context    context.Context
@@ -124,13 +124,13 @@ func (o *UpdateSourceRepositoryParams) SetResourceID(resourceID string) {
 }
 
 // WithSourcerepository adds the sourcerepository to the update source repository params
-func (o *UpdateSourceRepositoryParams) WithSourcerepository(sourcerepository models.SourceRepository) *UpdateSourceRepositoryParams {
+func (o *UpdateSourceRepositoryParams) WithSourcerepository(sourcerepository *models.SourceRepository) *UpdateSourceRepositoryParams {
 	o.SetSourcerepository(sourcerepository)
 	return o
 }
 
 // SetSourcerepository adds the sourcerepository to the update source repository params
-func (o *UpdateSourceRepositoryParams) SetSourcerepository(sourcerepository models.SourceRepository) {
+func (o *UpdateSourceRepositoryParams) SetSourcerepository(sourcerepository *models.SourceRepository) {
 	o.Sourcerepository = sourcerepository
 }
 

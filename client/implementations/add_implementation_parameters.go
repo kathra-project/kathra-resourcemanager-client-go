@@ -67,7 +67,7 @@ type AddImplementationParams struct {
 	  Implementation object to be created
 
 	*/
-	Implementation models.Implementation
+	Implementation *models.Implementation
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddImplementationParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithImplementation adds the implementation to the add implementation params
-func (o *AddImplementationParams) WithImplementation(implementation models.Implementation) *AddImplementationParams {
+func (o *AddImplementationParams) WithImplementation(implementation *models.Implementation) *AddImplementationParams {
 	o.SetImplementation(implementation)
 	return o
 }
 
 // SetImplementation adds the implementation to the add implementation params
-func (o *AddImplementationParams) SetImplementation(implementation models.Implementation) {
+func (o *AddImplementationParams) SetImplementation(implementation *models.Implementation) {
 	o.Implementation = implementation
 }
 

@@ -67,7 +67,7 @@ type AddAPIVersionParams struct {
 	  ApiVersion object to be created
 
 	*/
-	Apiversion models.APIVersion
+	Apiversion *models.APIVersion
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddAPIVersionParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithApiversion adds the apiversion to the add Api version params
-func (o *AddAPIVersionParams) WithApiversion(apiversion models.APIVersion) *AddAPIVersionParams {
+func (o *AddAPIVersionParams) WithApiversion(apiversion *models.APIVersion) *AddAPIVersionParams {
 	o.SetApiversion(apiversion)
 	return o
 }
 
 // SetApiversion adds the apiversion to the add Api version params
-func (o *AddAPIVersionParams) SetApiversion(apiversion models.APIVersion) {
+func (o *AddAPIVersionParams) SetApiversion(apiversion *models.APIVersion) {
 	o.Apiversion = apiversion
 }
 

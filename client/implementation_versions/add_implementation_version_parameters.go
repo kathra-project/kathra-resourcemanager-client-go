@@ -67,7 +67,7 @@ type AddImplementationVersionParams struct {
 	  ImplementationVersion object to be created
 
 	*/
-	Implementationversion models.ImplementationVersion
+	Implementationversion *models.ImplementationVersion
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddImplementationVersionParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithImplementationversion adds the implementationversion to the add implementation version params
-func (o *AddImplementationVersionParams) WithImplementationversion(implementationversion models.ImplementationVersion) *AddImplementationVersionParams {
+func (o *AddImplementationVersionParams) WithImplementationversion(implementationversion *models.ImplementationVersion) *AddImplementationVersionParams {
 	o.SetImplementationversion(implementationversion)
 	return o
 }
 
 // SetImplementationversion adds the implementationversion to the add implementation version params
-func (o *AddImplementationVersionParams) SetImplementationversion(implementationversion models.ImplementationVersion) {
+func (o *AddImplementationVersionParams) SetImplementationversion(implementationversion *models.ImplementationVersion) {
 	o.Implementationversion = implementationversion
 }
 

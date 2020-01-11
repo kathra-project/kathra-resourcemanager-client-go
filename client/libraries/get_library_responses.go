@@ -52,21 +52,23 @@ func NewGetLibraryOK() *GetLibraryOK {
 Returns the object
 */
 type GetLibraryOK struct {
-	Payload models.Library
+	Payload *models.Library
 }
 
 func (o *GetLibraryOK) Error() string {
 	return fmt.Sprintf("[GET /libraries/{resourceId}][%d] getLibraryOK  %+v", 200, o.Payload)
 }
 
-func (o *GetLibraryOK) GetPayload() models.Library {
+func (o *GetLibraryOK) GetPayload() *models.Library {
 	return o.Payload
 }
 
 func (o *GetLibraryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Library)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -67,7 +67,7 @@ type AddCatalogEntryParams struct {
 	  CatalogEntry object to be created
 
 	*/
-	Catalogentry models.CatalogEntry
+	Catalogentry *models.CatalogEntry
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddCatalogEntryParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithCatalogentry adds the catalogentry to the add catalog entry params
-func (o *AddCatalogEntryParams) WithCatalogentry(catalogentry models.CatalogEntry) *AddCatalogEntryParams {
+func (o *AddCatalogEntryParams) WithCatalogentry(catalogentry *models.CatalogEntry) *AddCatalogEntryParams {
 	o.SetCatalogentry(catalogentry)
 	return o
 }
 
 // SetCatalogentry adds the catalogentry to the add catalog entry params
-func (o *AddCatalogEntryParams) SetCatalogentry(catalogentry models.CatalogEntry) {
+func (o *AddCatalogEntryParams) SetCatalogentry(catalogentry *models.CatalogEntry) {
 	o.Catalogentry = catalogentry
 }
 

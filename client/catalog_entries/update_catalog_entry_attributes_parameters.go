@@ -67,7 +67,7 @@ type UpdateCatalogEntryAttributesParams struct {
 	  CatalogEntry object to be updated
 
 	*/
-	Catalogentry models.CatalogEntry
+	Catalogentry *models.CatalogEntry
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateCatalogEntryAttributesParams) SetHTTPClient(client *http.Client) 
 }
 
 // WithCatalogentry adds the catalogentry to the update catalog entry attributes params
-func (o *UpdateCatalogEntryAttributesParams) WithCatalogentry(catalogentry models.CatalogEntry) *UpdateCatalogEntryAttributesParams {
+func (o *UpdateCatalogEntryAttributesParams) WithCatalogentry(catalogentry *models.CatalogEntry) *UpdateCatalogEntryAttributesParams {
 	o.SetCatalogentry(catalogentry)
 	return o
 }
 
 // SetCatalogentry adds the catalogentry to the update catalog entry attributes params
-func (o *UpdateCatalogEntryAttributesParams) SetCatalogentry(catalogentry models.CatalogEntry) {
+func (o *UpdateCatalogEntryAttributesParams) SetCatalogentry(catalogentry *models.CatalogEntry) {
 	o.Catalogentry = catalogentry
 }
 

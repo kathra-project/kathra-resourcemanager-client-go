@@ -52,21 +52,23 @@ func NewAddCatalogEntryPackageOK() *AddCatalogEntryPackageOK {
 Returns the created object
 */
 type AddCatalogEntryPackageOK struct {
-	Payload models.CatalogEntryPackage
+	Payload *models.CatalogEntryPackage
 }
 
 func (o *AddCatalogEntryPackageOK) Error() string {
 	return fmt.Sprintf("[POST /catalogentrypackages][%d] addCatalogEntryPackageOK  %+v", 200, o.Payload)
 }
 
-func (o *AddCatalogEntryPackageOK) GetPayload() models.CatalogEntryPackage {
+func (o *AddCatalogEntryPackageOK) GetPayload() *models.CatalogEntryPackage {
 	return o.Payload
 }
 
 func (o *AddCatalogEntryPackageOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.CatalogEntryPackage)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

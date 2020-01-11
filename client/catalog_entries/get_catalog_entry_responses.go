@@ -52,21 +52,23 @@ func NewGetCatalogEntryOK() *GetCatalogEntryOK {
 Returns the object
 */
 type GetCatalogEntryOK struct {
-	Payload models.CatalogEntry
+	Payload *models.CatalogEntry
 }
 
 func (o *GetCatalogEntryOK) Error() string {
 	return fmt.Sprintf("[GET /catalogentries/{resourceId}][%d] getCatalogEntryOK  %+v", 200, o.Payload)
 }
 
-func (o *GetCatalogEntryOK) GetPayload() models.CatalogEntry {
+func (o *GetCatalogEntryOK) GetPayload() *models.CatalogEntry {
 	return o.Payload
 }
 
 func (o *GetCatalogEntryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.CatalogEntry)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

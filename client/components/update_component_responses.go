@@ -52,21 +52,23 @@ func NewUpdateComponentOK() *UpdateComponentOK {
 Returns the modified object
 */
 type UpdateComponentOK struct {
-	Payload models.Component
+	Payload *models.Component
 }
 
 func (o *UpdateComponentOK) Error() string {
 	return fmt.Sprintf("[PUT /components/{resourceId}][%d] updateComponentOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateComponentOK) GetPayload() models.Component {
+func (o *UpdateComponentOK) GetPayload() *models.Component {
 	return o.Payload
 }
 
 func (o *UpdateComponentOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Component)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

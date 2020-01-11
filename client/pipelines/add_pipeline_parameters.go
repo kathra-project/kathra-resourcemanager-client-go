@@ -67,7 +67,7 @@ type AddPipelineParams struct {
 	  Pipeline object to be created
 
 	*/
-	Pipeline models.Pipeline
+	Pipeline *models.Pipeline
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddPipelineParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithPipeline adds the pipeline to the add pipeline params
-func (o *AddPipelineParams) WithPipeline(pipeline models.Pipeline) *AddPipelineParams {
+func (o *AddPipelineParams) WithPipeline(pipeline *models.Pipeline) *AddPipelineParams {
 	o.SetPipeline(pipeline)
 	return o
 }
 
 // SetPipeline adds the pipeline to the add pipeline params
-func (o *AddPipelineParams) SetPipeline(pipeline models.Pipeline) {
+func (o *AddPipelineParams) SetPipeline(pipeline *models.Pipeline) {
 	o.Pipeline = pipeline
 }
 

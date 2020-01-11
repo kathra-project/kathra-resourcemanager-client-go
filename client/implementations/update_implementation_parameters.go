@@ -67,7 +67,7 @@ type UpdateImplementationParams struct {
 	  Implementation object to be updated
 
 	*/
-	Implementation models.Implementation
+	Implementation *models.Implementation
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateImplementationParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithImplementation adds the implementation to the update implementation params
-func (o *UpdateImplementationParams) WithImplementation(implementation models.Implementation) *UpdateImplementationParams {
+func (o *UpdateImplementationParams) WithImplementation(implementation *models.Implementation) *UpdateImplementationParams {
 	o.SetImplementation(implementation)
 	return o
 }
 
 // SetImplementation adds the implementation to the update implementation params
-func (o *UpdateImplementationParams) SetImplementation(implementation models.Implementation) {
+func (o *UpdateImplementationParams) SetImplementation(implementation *models.Implementation) {
 	o.Implementation = implementation
 }
 

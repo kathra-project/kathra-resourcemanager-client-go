@@ -67,7 +67,7 @@ type AddComponentParams struct {
 	  Component object to be created
 
 	*/
-	Component models.Component
+	Component *models.Component
 	/*GroupPath
 	  group's path
 
@@ -113,13 +113,13 @@ func (o *AddComponentParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithComponent adds the component to the add component params
-func (o *AddComponentParams) WithComponent(component models.Component) *AddComponentParams {
+func (o *AddComponentParams) WithComponent(component *models.Component) *AddComponentParams {
 	o.SetComponent(component)
 	return o
 }
 
 // SetComponent adds the component to the add component params
-func (o *AddComponentParams) SetComponent(component models.Component) {
+func (o *AddComponentParams) SetComponent(component *models.Component) {
 	o.Component = component
 }
 

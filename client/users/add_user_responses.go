@@ -52,21 +52,23 @@ func NewAddUserOK() *AddUserOK {
 Returns the created object
 */
 type AddUserOK struct {
-	Payload models.User
+	Payload *models.User
 }
 
 func (o *AddUserOK) Error() string {
 	return fmt.Sprintf("[POST /users][%d] addUserOK  %+v", 200, o.Payload)
 }
 
-func (o *AddUserOK) GetPayload() models.User {
+func (o *AddUserOK) GetPayload() *models.User {
 	return o.Payload
 }
 
 func (o *AddUserOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.User)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

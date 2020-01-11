@@ -52,21 +52,23 @@ func NewGetUserOK() *GetUserOK {
 Returns the object
 */
 type GetUserOK struct {
-	Payload models.User
+	Payload *models.User
 }
 
 func (o *GetUserOK) Error() string {
 	return fmt.Sprintf("[GET /users/{resourceId}][%d] getUserOK  %+v", 200, o.Payload)
 }
 
-func (o *GetUserOK) GetPayload() models.User {
+func (o *GetUserOK) GetPayload() *models.User {
 	return o.Payload
 }
 
 func (o *GetUserOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.User)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

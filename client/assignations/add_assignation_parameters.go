@@ -67,7 +67,7 @@ type AddAssignationParams struct {
 	  Assignation object to be created
 
 	*/
-	Assignation models.Assignation
+	Assignation *models.Assignation
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *AddAssignationParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithAssignation adds the assignation to the add assignation params
-func (o *AddAssignationParams) WithAssignation(assignation models.Assignation) *AddAssignationParams {
+func (o *AddAssignationParams) WithAssignation(assignation *models.Assignation) *AddAssignationParams {
 	o.SetAssignation(assignation)
 	return o
 }
 
 // SetAssignation adds the assignation to the add assignation params
-func (o *AddAssignationParams) SetAssignation(assignation models.Assignation) {
+func (o *AddAssignationParams) SetAssignation(assignation *models.Assignation) {
 	o.Assignation = assignation
 }
 

@@ -52,21 +52,23 @@ func NewAddImplementationOK() *AddImplementationOK {
 Returns the created object
 */
 type AddImplementationOK struct {
-	Payload models.Implementation
+	Payload *models.Implementation
 }
 
 func (o *AddImplementationOK) Error() string {
 	return fmt.Sprintf("[POST /implementations][%d] addImplementationOK  %+v", 200, o.Payload)
 }
 
-func (o *AddImplementationOK) GetPayload() models.Implementation {
+func (o *AddImplementationOK) GetPayload() *models.Implementation {
 	return o.Payload
 }
 
 func (o *AddImplementationOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.Implementation)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

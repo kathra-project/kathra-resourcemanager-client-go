@@ -52,14 +52,14 @@ func NewGetUsersOK() *GetUsersOK {
 List of accessible users for the authenticated user
 */
 type GetUsersOK struct {
-	Payload []models.User
+	Payload []*models.User
 }
 
 func (o *GetUsersOK) Error() string {
 	return fmt.Sprintf("[GET /users][%d] getUsersOK  %+v", 200, o.Payload)
 }
 
-func (o *GetUsersOK) GetPayload() []models.User {
+func (o *GetUsersOK) GetPayload() []*models.User {
 	return o.Payload
 }
 

@@ -52,14 +52,14 @@ func NewGetImplementationsComponentOK() *GetImplementationsComponentOK {
 List of accessible implementations for specific component and the authenticated user
 */
 type GetImplementationsComponentOK struct {
-	Payload []models.Implementation
+	Payload []*models.Implementation
 }
 
 func (o *GetImplementationsComponentOK) Error() string {
 	return fmt.Sprintf("[GET /components/{resourceId}/implementations][%d] getImplementationsComponentOK  %+v", 200, o.Payload)
 }
 
-func (o *GetImplementationsComponentOK) GetPayload() []models.Implementation {
+func (o *GetImplementationsComponentOK) GetPayload() []*models.Implementation {
 	return o.Payload
 }
 

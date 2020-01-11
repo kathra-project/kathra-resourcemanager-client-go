@@ -67,7 +67,7 @@ type UpdateLibraryAttributesParams struct {
 	  Library object to be updated
 
 	*/
-	Library models.Library
+	Library *models.Library
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateLibraryAttributesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithLibrary adds the library to the update library attributes params
-func (o *UpdateLibraryAttributesParams) WithLibrary(library models.Library) *UpdateLibraryAttributesParams {
+func (o *UpdateLibraryAttributesParams) WithLibrary(library *models.Library) *UpdateLibraryAttributesParams {
 	o.SetLibrary(library)
 	return o
 }
 
 // SetLibrary adds the library to the update library attributes params
-func (o *UpdateLibraryAttributesParams) SetLibrary(library models.Library) {
+func (o *UpdateLibraryAttributesParams) SetLibrary(library *models.Library) {
 	o.Library = library
 }
 

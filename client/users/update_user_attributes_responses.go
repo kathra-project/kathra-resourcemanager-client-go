@@ -52,21 +52,23 @@ func NewUpdateUserAttributesOK() *UpdateUserAttributesOK {
 Returns the modified object
 */
 type UpdateUserAttributesOK struct {
-	Payload models.User
+	Payload *models.User
 }
 
 func (o *UpdateUserAttributesOK) Error() string {
 	return fmt.Sprintf("[PATCH /users/{resourceId}][%d] updateUserAttributesOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateUserAttributesOK) GetPayload() models.User {
+func (o *UpdateUserAttributesOK) GetPayload() *models.User {
 	return o.Payload
 }
 
 func (o *UpdateUserAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.User)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
