@@ -52,14 +52,14 @@ func NewAddAssignationOK() *AddAssignationOK {
 Returns the created object
 */
 type AddAssignationOK struct {
-	Payload Assignation.CatalogEnAssignationtry
+	Payload Assignation.Assignation
 }
 
 func (o *AddAssignationOK) Error() string {
 	return fmt.Sprintf("[POST /assignations][%d] addAssignationOK  %+v", 200, o.Payload)
 }
 
-func (o *AddAssignationOK) GetPayload() Assignation.CatalogEnAssignationtry {
+func (o *AddAssignationOK) GetPayload() Assignation.Assignation {
 	return o.Payload
 }
 

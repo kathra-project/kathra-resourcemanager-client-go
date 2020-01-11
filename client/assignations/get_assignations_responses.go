@@ -52,14 +52,14 @@ func NewGetAssignationsOK() *GetAssignationsOK {
 List of accessible assignations for the authenticated user
 */
 type GetAssignationsOK struct {
-	Payload []Assignation.CatalogEnAssignationtry
+	Payload []Assignation.Assignation
 }
 
 func (o *GetAssignationsOK) Error() string {
 	return fmt.Sprintf("[GET /assignations][%d] getAssignationsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetAssignationsOK) GetPayload() []Assignation.CatalogEnAssignationtry {
+func (o *GetAssignationsOK) GetPayload() []Assignation.Assignation {
 	return o.Payload
 }
 

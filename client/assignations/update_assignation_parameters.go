@@ -67,7 +67,7 @@ type UpdateAssignationParams struct {
 	  Assignation object to be updated
 
 	*/
-	Assignation Assignation.CatalogEnAssignationtry
+	Assignation Assignation.Assignation
 	/*ResourceID
 	  resource's id
 
@@ -113,13 +113,13 @@ func (o *UpdateAssignationParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithAssignation adds the assignation to the update assignation params
-func (o *UpdateAssignationParams) WithAssignation(assignation Assignation.CatalogEnAssignationtry) *UpdateAssignationParams {
+func (o *UpdateAssignationParams) WithAssignation(assignation Assignation.Assignation) *UpdateAssignationParams {
 	o.SetAssignation(assignation)
 	return o
 }
 
 // SetAssignation adds the assignation to the update assignation params
-func (o *UpdateAssignationParams) SetAssignation(assignation Assignation.CatalogEnAssignationtry) {
+func (o *UpdateAssignationParams) SetAssignation(assignation Assignation.Assignation) {
 	o.Assignation = assignation
 }
 

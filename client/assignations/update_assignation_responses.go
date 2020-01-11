@@ -52,14 +52,14 @@ func NewUpdateAssignationOK() *UpdateAssignationOK {
 Returns the modified object
 */
 type UpdateAssignationOK struct {
-	Payload Assignation.CatalogEnAssignationtry
+	Payload Assignation.Assignation
 }
 
 func (o *UpdateAssignationOK) Error() string {
 	return fmt.Sprintf("[PUT /assignations/{resourceId}][%d] updateAssignationOK  %+v", 200, o.Payload)
 }
 
-func (o *UpdateAssignationOK) GetPayload() Assignation.CatalogEnAssignationtry {
+func (o *UpdateAssignationOK) GetPayload() Assignation.Assignation {
 	return o.Payload
 }
 
